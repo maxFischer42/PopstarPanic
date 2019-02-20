@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394dc7b19f0b719478b11f6ebdd26018, type: 3}
+  m_Name: WalkInDoor
+  m_EditorClassIdentifier: 
+  frameRate: 0.6
+  cells:
+  - {fileID: 21300008, guid: 9615ea936de1b5d439f4e363ef7550db, type: 3}
