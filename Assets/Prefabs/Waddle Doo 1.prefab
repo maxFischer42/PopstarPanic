@@ -172,12 +172,14 @@ MonoBehaviour:
   maxDistanceDelta: 0.03
   dir: {fileID: 4225158674004898}
   hitSoundCutter: {fileID: 8300000, guid: 2ded81ef79f2fae42a968ae1c721d9eb, type: 3}
+  block: 0
   isDoo: 1
   dooTimer: 3
   defaultDoo: {fileID: 9100000, guid: 5020712f78752bd47aa13486f131c733, type: 2}
   attackDoo: {fileID: 9100000, guid: e7528b35c85053b488353439b6bfcb59, type: 2}
   hurtObj: {fileID: 1201061927323778, guid: 02715fb2d75a6d848a2937e699be1d37, type: 2}
   hurtSpawn: {fileID: 4702450086530108}
+  invincible: 0
 --- !u!212 &212984684825149960
 SpriteRenderer:
   m_ObjectHideFlags: 1

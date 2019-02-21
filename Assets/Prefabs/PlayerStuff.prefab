@@ -3176,6 +3176,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: e6925b754f6baf642a1ca47016bce93b, type: 3}
   atDoor: 0
   cutter: {fileID: 114285385175029258}
+  fallTimer: 0
 --- !u!114 &114084497413087372
 MonoBehaviour:
   m_ObjectHideFlags: 1

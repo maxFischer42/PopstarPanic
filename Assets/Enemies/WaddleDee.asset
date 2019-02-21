@@ -13,3 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   direction: {x: -0.05, y: 0, z: 0}
   knockback: {x: 5, y: 15}
+  noPlayer: 0
