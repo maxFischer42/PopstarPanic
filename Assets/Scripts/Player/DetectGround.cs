@@ -15,7 +15,7 @@ public class DetectGround : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if(collision.gameObject.tag == "Ground" && controller.finishJump)
         {
             controller.isGrounded = true;
             controller.finishJump = false;
@@ -31,7 +31,7 @@ public class DetectGround : MonoBehaviour
             controller.currentState = Controller.State.Jumping;
             
         }
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" && controller.finishJump)
         {
             controller.isGrounded = true;
             controller.finishJump = false;

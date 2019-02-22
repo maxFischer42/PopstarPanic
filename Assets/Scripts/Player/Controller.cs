@@ -23,6 +23,7 @@ namespace PlayerController
         public bool atDoor;
         public Cutter cutter;
         public float fallTimer;
+        public float jumpDistanceDelta = 0.25f;
 
         void Flip(float _dir)
         {
@@ -40,6 +41,10 @@ namespace PlayerController
         private void Start()
         {
             GetComponent<Rigidbody2D>().gravityScale = 2f;
+            mySpeed = 0.4f;
+            maxDistanceDelta = 0.15f;
+            jumpAccelerate = 0.2f;
+            jumpDistanceDelta = 0.15f;
             GetComponent<PolygonCollider2D>().offset = new Vector2(-0.1f,0f);
             if(isMap)
             {
@@ -146,7 +151,7 @@ namespace PlayerController
             finishJump = true;
             isGrounded = false;
             direction *= mySpeed / 2;
-            transform.position = Vector2.MoveTowards(transform.position, transform.position + direction, maxDistanceDelta);
+            transform.position = Vector2.MoveTowards(transform.position, transform.position + direction, jumpDistanceDelta);
             if (GetComponent<Rigidbody2D>().velocity.y < -6f)
                 GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -6f);
             fallTimer += Time.deltaTime;
@@ -162,13 +167,15 @@ namespace PlayerController
             isGrounded = false;
             Vector3 dir = new Vector2(0f, 1f);
             dir *= jumpAccelerate;
-            transform.position = Vector2.MoveTowards(transform.position, transform.position + dir, maxDistanceDelta);
+            transform.position = Vector2.MoveTowards(transform.position, transform.position + dir, jumpDistanceDelta);
+
 
         }
 
         void Cut()
         {
             cutter.CutCommand();
+            finishJump = true;
         }
 
         void Walk()

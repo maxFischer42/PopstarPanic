@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 394dc7b19f0b719478b11f6ebdd26018, type: 3}
   m_Name: Walking
   m_EditorClassIdentifier: 
-  frameRate: 3
+  frameRate: 10
   cells:
   - {fileID: 21300004, guid: 9615ea936de1b5d439f4e363ef7550db, type: 3}
   - {fileID: 21300006, guid: 9615ea936de1b5d439f4e363ef7550db, type: 3}
