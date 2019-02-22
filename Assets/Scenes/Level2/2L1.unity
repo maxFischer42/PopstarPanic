@@ -321,7 +321,7 @@ GameObject:
   - component: {fileID: 145070057}
   - component: {fileID: 145070056}
   - component: {fileID: 145070055}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -14544,6 +14544,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1835128415
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4591446881575906, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -25.240566
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591446881575906, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.1447744
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591446881575906, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591446881575906, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591446881575906, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591446881575906, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591446881575906, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4591446881575906, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114089075130647542, guid: 1b2c895a726762f4f84d51c6f1bc425d,
+        type: 2}
+      propertyPath: maxDistanceDelta
+      value: 0.07
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b2c895a726762f4f84d51c6f1bc425d, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1001 &1969302890
 Prefab:
   m_ObjectHideFlags: 0
