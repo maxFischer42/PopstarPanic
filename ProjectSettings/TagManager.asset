@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Cutter
+  - ID
   layers:
   - Default
   - TransparentFX

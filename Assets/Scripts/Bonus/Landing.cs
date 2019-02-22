@@ -11,7 +11,8 @@ public class Landing : MonoBehaviour {
     public AudioClip miss;
     public AudioClip m_long;
     public GameObject Kirbflag;
-    public string sceneToLoad = "Map";
+    public string sceneToLoad;
+    public Vector2 loadPosition;
     public Vector3 offset;
 
     bool ended;
@@ -19,14 +20,21 @@ public class Landing : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Origin = transform.position;
+       // sceneToLoad = GameObject.FindGameObjectWithTag("ID").name;
+       // loadPosition = GameObject.FindGameObjectWithTag("ID").transform.position;
 	}
     private void Update()
     {
         if (ended)
             countdown += Time.deltaTime;
         if (countdown >= 6.5f)
+        {
+            PlayerPrefs.SetFloat("memoryX", loadPosition.x);
+            PlayerPrefs.SetFloat("memoryY", loadPosition.y);
+            ended = !ended;
+            countdown = 0f;
             SceneManager.LoadScene(sceneToLoad);
-
+        }
     }
 
 

@@ -7,8 +7,8 @@ namespace PlayerController
     public class Controller : MonoBehaviour
     {
 
+        public bool isMap;
         public float mySpeed = 1.0f;
-
         public enum State { Idle, Walking, Jumping, Damage, FireDamage, Ducking, Falling, Door, Cut};
         public State currentState = State.Idle;
         public float maxDistanceDelta = 0.5f;
@@ -36,10 +36,18 @@ namespace PlayerController
             }
         }
 
+
         private void Start()
         {
-            GetComponent<Rigidbody2D>().gravityScale = 1.5f;
-
+            GetComponent<Rigidbody2D>().gravityScale = 2f;
+            GetComponent<PolygonCollider2D>().offset = new Vector2(-0.1f,0f);
+            if(isMap)
+            {
+                float x = PlayerPrefs.GetFloat("memoryX");
+                float y = PlayerPrefs.GetFloat("memoryY");
+                Vector2 startPos = new Vector2(x, y);
+                transform.localPosition = startPos;
+            }
         }
 
         void Update()
@@ -50,6 +58,14 @@ namespace PlayerController
                 direction = new Vector2(new GetInputs().horizontalInput, 0f);
                 direction *= mySpeed * jumpHorizontal;
                 transform.position = Vector2.MoveTowards(transform.position, transform.position + direction, maxDistanceDelta);
+            }
+            if(GetComponent<SpriteRenderer>().flipX)
+            {
+                GetComponent<PolygonCollider2D>().offset = new Vector2(-0.12f, 0f);
+            }
+            else
+            {
+                GetComponent<PolygonCollider2D>().offset = new Vector2(-0.1f, 0f);
             }
 
             if (currentState != State.Ducking)

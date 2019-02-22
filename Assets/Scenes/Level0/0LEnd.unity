@@ -1056,6 +1056,8 @@ MonoBehaviour:
   miss: {fileID: 8300000, guid: 10210376bc9cc9341ae63614e19ef880, type: 3}
   m_long: {fileID: 8300000, guid: 2d7f3dcd72e901849a1e27a559f334b7, type: 3}
   Kirbflag: {fileID: 1098877110177212, guid: 7396c41599b937a4c8a75194ec0128d8, type: 2}
+  sceneToLoad: Map
+  loadPosition: {x: -2.5, y: 0}
   offset: {x: 0.5, y: 1.3, z: 0}
 --- !u!1 &1694667541
 GameObject:
@@ -1165,7 +1167,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 466f8fa91d671954a9080025916bf1f4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0

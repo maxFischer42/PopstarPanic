@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Name: Cannonball
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
-  knockback: {x: 0, y: 0}
+  knockback: {x: 3, y: 3}
   noPlayer: 1
