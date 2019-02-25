@@ -24,6 +24,11 @@ namespace PlayerController
         public Cutter cutter;
         public float fallTimer;
         public float jumpDistanceDelta = 0.25f;
+        public DetectGround feet;
+        public WallJumpDetection leftWall;
+        public WallJumpDetection rightWall;
+        public int currentJumps;
+
 
         void Flip(float _dir)
         {
@@ -40,6 +45,7 @@ namespace PlayerController
 
         private void Start()
         {
+            feet = GetComponentInChildren<DetectGround>();
             GetComponent<Rigidbody2D>().gravityScale = 2f;
             mySpeed = 0.4f;
             maxDistanceDelta = 0.15f;
@@ -113,9 +119,16 @@ namespace PlayerController
             if (cutter.throwing)
                 return;
             if (Input.GetButtonDown("Jump") && isGrounded)
+            {
                 Camera.main.GetComponent<AudioSource>().PlayOneShot(jumpSound);
-            if (myInput.jumpInput && isGrounded && !finishJump)
+                currentJumps++;
+            }
+            if (myInput.jumpInput && isGrounded && !finishJump && currentState != State.Falling)
                 GetState(myInput.horizontalInput, State.Jumping);
+            else if (myInput.jumpInput && finishJump && currentState == State.Falling && feet.hitGround)
+            {
+                GetState(myInput.horizontalInput, State.Jumping);
+            }
             else if (!isGrounded && finishJump)
                 GetState(myInput.horizontalInput, State.Falling);
             else if (myInput.horizontalInput != 0 && isGrounded)
@@ -162,13 +175,22 @@ namespace PlayerController
             }
         }
 
+
         void Jump()
-        { 
+        {
+            if (Grounded() && currentJumps > 1)
+            {
+                Vector2 vel = GetComponent<Rigidbody2D>().velocity;
+                vel = new Vector2(0f, Mathf.Abs(vel.y));
+                vel *= 1.1f;
+                GetComponent<Rigidbody2D>().velocity = vel;
+                Debug.Log("Boosted jump");
+            }
             isGrounded = false;
             Vector3 dir = new Vector2(0f, 1f);
             dir *= jumpAccelerate;
             transform.position = Vector2.MoveTowards(transform.position, transform.position + dir, jumpDistanceDelta);
-
+            
 
         }
 
@@ -190,6 +212,23 @@ namespace PlayerController
             colliderHitBox.enabled = _isDucking;
         }
 
+        bool Grounded()
+        {
+            Vector2 position = transform.position;
+            Vector2 direction = Vector2.down;
+            float distance = 0.1f;
+
+            RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, LayerMask.NameToLayer("Ground"));
+            if (hit.collider != null)
+            {
+                
+                return false;
+            }
+            float dis = feet.transform.position.y - hit.point.y;
+       //     Debug.Log(dis.ToString());
+            return true;
+        }
+
     }
 
     public class GetInputs
@@ -204,7 +243,10 @@ namespace PlayerController
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
             attackInput = Input.GetButton("Attack");
-            jumpInput = Input.GetButtonDown("Jump");
+            if (Input.GetButtonDown("Jump"))
+                jumpInput = true;
+            else
+                jumpInput = false;
         }
     }
 

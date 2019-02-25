@@ -6,6 +6,9 @@ using PlayerController;
 public class DetectGround : MonoBehaviour
 {
     public Controller controller;
+    public bool hitGround;
+    public float countDown;
+    private float timer;
 
     private void Start()
     {
@@ -15,14 +18,18 @@ public class DetectGround : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Ground" && controller.finishJump)
+        if (collision.gameObject.tag == "Ground" && controller.finishJump || collision.gameObject.tag == "Ground" && controller.currentState == Controller.State.Falling)
         {
             controller.isGrounded = true;
             controller.finishJump = false;
             controller.GetComponent<Rigidbody2D>().velocity = new Vector2(controller.GetComponent<Rigidbody2D>().velocity.x, 0f);
+            hitGround = true;
+        }
+        if (collision.gameObject.tag == "Ground")
+        {
+            timer = 0;
         }
     }
-
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Platform"))
@@ -31,21 +38,33 @@ public class DetectGround : MonoBehaviour
             controller.currentState = Controller.State.Jumping;
             
         }
-        if (collision.gameObject.tag == "Ground" && controller.finishJump)
+        if(collision.gameObject.tag == "Ground")
         {
+            timer += Time.deltaTime;
+            if (timer >= countDown)
+            {
+                controller.currentJumps = 0;
+                timer = 0;
+            }
+        }
+        if (collision.gameObject.tag == "Ground" && controller.finishJump || collision.gameObject.tag == "Ground" && controller.currentState == Controller.State.Falling)
+        {
+            
+            hitGround = true;
             controller.isGrounded = true;
             controller.finishJump = false;
             controller.GetComponent<Rigidbody2D>().velocity = new Vector2(controller.GetComponent<Rigidbody2D>().velocity.x, 0f);
         }
     }
 
-  /*  public void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
-            controller.isGrounded = false;
-            controller.currentState = Controller.State.
-            controller.finishJump = false;
+            //controller.isGrounded = false;
+            //controller.currentState = Controller.State.
+            //controller.finishJump = false;
+            hitGround = false;
         }
-    }*/
+    }
 }
