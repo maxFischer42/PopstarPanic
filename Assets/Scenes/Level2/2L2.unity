@@ -2411,7 +2411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 428731594}
-  m_continue: 0
+  m_continue: 1
 --- !u!82 &428731594
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2424,7 +2424,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bc32a67e0d908a14c98054e47de00409, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.21428572
   m_Pitch: 1
   Loop: 0
   Mute: 0
