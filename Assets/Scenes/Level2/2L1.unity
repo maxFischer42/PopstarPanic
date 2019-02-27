@@ -155,13 +155,13 @@ Prefab:
     - target: {fileID: 82041034269088718, guid: 7be7c4cdd7395174bb1ca118a3c9e323,
         type: 2}
       propertyPath: m_Volume
-      value: 0.21428572
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 82041034269088718, guid: 7be7c4cdd7395174bb1ca118a3c9e323,
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: bc32a67e0d908a14c98054e47de00409, type: 3}
+      objectReference: {fileID: 8300000, guid: 67faaef370108d049a4fa5ff9f79d9ff, type: 3}
     - target: {fileID: 4501254230933918, guid: 7be7c4cdd7395174bb1ca118a3c9e323, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0.03
