@@ -92,6 +92,8 @@ MonoBehaviour:
   rigid: {fileID: 50131305413026896}
   forceUp: {x: 0, y: 1000}
   rotate: 1
+  movable: 1
+  effect: {fileID: 1936027507246976, guid: 0552ebe822d8ae04fb90aabef4e46e3e, type: 2}
 --- !u!212 &212227178955801372
 SpriteRenderer:
   m_ObjectHideFlags: 1

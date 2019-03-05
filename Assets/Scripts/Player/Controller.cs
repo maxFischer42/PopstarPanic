@@ -28,6 +28,9 @@ namespace PlayerController
         public WallJumpDetection leftWall;
         public WallJumpDetection rightWall;
         public int currentJumps;
+        public float jumpBoost = 3f;
+        public AudioClip boostedJumpSound;
+        public GameObject boostedJumpEffect;
 
 
         void Flip(float _dir)
@@ -120,7 +123,15 @@ namespace PlayerController
                 return;
             if (Input.GetButtonDown("Jump") && isGrounded)
             {
-                Camera.main.GetComponent<AudioSource>().PlayOneShot(jumpSound);
+                AudioClip aa = jumpSound;
+                if (Grounded() && currentJumps >= 1)
+                {
+                    aa = boostedJumpSound;
+                    GameObject eff = (GameObject)Instantiate(boostedJumpEffect,feet.transform);
+                    eff.transform.parent = null;
+                    Destroy(eff, 2.5f);
+                }
+                Camera.main.GetComponent<AudioSource>().PlayOneShot(aa);
                 currentJumps++;
             }
             if (myInput.jumpInput && isGrounded && !finishJump && currentState != State.Falling)
@@ -178,19 +189,20 @@ namespace PlayerController
 
         void Jump()
         {
+            
             if (Grounded() && currentJumps > 1)
             {
                 Vector2 vel = GetComponent<Rigidbody2D>().velocity;
-                vel = new Vector2(0f, Mathf.Abs(vel.y));
-                vel *= 1.1f;
+                //vel = new Vector2(0f, Mathf.Abs(vel.y));
+                vel = new Vector2(0, jumpBoost);
                 GetComponent<Rigidbody2D>().velocity = vel;
                 Debug.Log("Boosted jump");
+                
             }
             isGrounded = false;
             Vector3 dir = new Vector2(0f, 1f);
             dir *= jumpAccelerate;
             transform.position = Vector2.MoveTowards(transform.position, transform.position + dir, jumpDistanceDelta);
-            
 
         }
 

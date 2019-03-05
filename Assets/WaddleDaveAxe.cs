@@ -9,6 +9,7 @@ public class WaddleDaveAxe : MonoBehaviour {
     public bool rotate = true;
     int z = 0;
     public bool movable = true;
+    public GameObject effect;
 
 
 
@@ -40,6 +41,8 @@ public class WaddleDaveAxe : MonoBehaviour {
         else if(collision.gameObject.tag == "Ground")
         {
             rigid.bodyType = RigidbodyType2D.Static;
+            GameObject eff = (GameObject)Instantiate(effect,transform);
+            Destroy(eff, 3.5f);
             rotate = false;
             Destroy(gameObject, 3.5f);
         }
