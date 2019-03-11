@@ -33,6 +33,7 @@ public class WaddleDave : MonoBehaviour {
     public GameObject axeObejct;
     public GameObject waddleDees;
     public bool hasDees;
+    public GameObject deathObject;
 
     public int HP = 15;
     // Use this for initialization
@@ -131,6 +132,7 @@ public class WaddleDave : MonoBehaviour {
         if (collision.gameObject.tag == "Cutter")
         {
             HP--;
+            StartCoroutine(hitChangeColor());
             hpBars[HP].enabled = false;
             if(HP == 7 && !hasDees)
             {
@@ -146,10 +148,23 @@ public class WaddleDave : MonoBehaviour {
 
             if (HP <= 0)
             {
+                GameObject de = (GameObject)Instantiate(deathObject,transform);
+                de.transform.parent = null;
+                Destroy(de, 5f);
                 axeObejct.SetActive(true);
+                waddleDees.SetActive(false);
                 Destroy(gameObject);
             }
         }
+    }
+
+    public IEnumerator hitChangeColor()
+    {
+        SpriteRenderer sprt = GetComponent<SpriteRenderer>();
+        Color defaultColor = sprt.color;
+        sprt.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sprt.color = defaultColor;
     }
 
     private void Move(Vector3 direction, bool flip)

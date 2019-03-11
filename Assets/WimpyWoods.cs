@@ -11,6 +11,7 @@ public class WimpyWoods : MonoBehaviour {
     public Sprite cut3;
     public Sprite destroyed;
     public GameObject waddleDave;
+    public Canvas displayCanvas;
     private int current;
 
     public float timer;
@@ -24,6 +25,7 @@ public class WimpyWoods : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if(current !=5)
         timer += Time.deltaTime;
         if (timer > 2 && current == 0)
         {
@@ -52,7 +54,10 @@ public class WimpyWoods : MonoBehaviour {
         else if (timer > 1f && current == 4)
         {
             s.sprite = destroyed;
+            displayCanvas.enabled = true;
+            Camera.main.GetComponent<AudioSource>().enabled = true;
             waddleDave.SetActive(true);
+            current = 5;
         }
     }
 }
