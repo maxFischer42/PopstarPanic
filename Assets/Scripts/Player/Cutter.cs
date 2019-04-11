@@ -12,10 +12,7 @@ public class Cutter : MonoBehaviour {
     bool flip = false;
     public bool throwing;
     public AudioClip sound;
-    private void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update ()
@@ -26,7 +23,7 @@ public class Cutter : MonoBehaviour {
 
     public void CutCommand()
     {
-        if (cooldown > cooldownCurrent)
+        if (cooldown > cooldownCurrent || GetComponent<Controller>().currentState == Controller.State.Jumping)
             return;
         throwing = true;
         StartCoroutine(Cut());
@@ -43,6 +40,8 @@ public class Cutter : MonoBehaviour {
         throwing = false;
         
     }
+
+
 
 
 }

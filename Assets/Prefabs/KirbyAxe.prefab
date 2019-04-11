@@ -9,116 +9,94 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1912036535284444}
+  m_RootGameObject: {fileID: 1650252551864804}
   m_IsPrefabAsset: 1
---- !u!1 &1912036535284444
+--- !u!1 &1650252551864804
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4401864487543528}
-  - component: {fileID: 212802631876119672}
-  - component: {fileID: 114809566878080140}
-  - component: {fileID: 61682462183544826}
-  - component: {fileID: 50959905385511296}
+  - component: {fileID: 4558178782807906}
+  - component: {fileID: 212832182331672848}
+  - component: {fileID: 58436811591602604}
+  - component: {fileID: 50416476410864966}
+  - component: {fileID: 114482776152584776}
   m_Layer: 0
-  m_Name: StarBlock
-  m_TagString: Ground
+  m_Name: KirbyAxe
+  m_TagString: Cutter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4401864487543528
+--- !u!4 &4558178782807906
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1912036535284444}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1650252551864804}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50959905385511296
+--- !u!50 &50416476410864966
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1912036535284444}
+  m_GameObject: {fileID: 1650252551864804}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 999
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!61 &61682462183544826
-BoxCollider2D:
+  m_Constraints: 0
+--- !u!58 &58436811591602604
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1912036535284444}
+  m_GameObject: {fileID: 1650252551864804}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3333334, y: 1.3333334}
-    newSize: {x: 1.3333334, y: 1.3333334}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.33, y: 0.06}
   serializedVersion: 2
-  m_Size: {x: 1.3333334, y: 1.3333334}
-  m_EdgeRadius: 0
---- !u!114 &114809566878080140
+  m_Radius: 0.2
+--- !u!114 &114482776152584776
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1912036535284444}
+  m_GameObject: {fileID: 1650252551864804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d2289208727f1845bee25c7261b3adb, type: 3}
+  m_Script: {fileID: 11500000, guid: 69b53912672ddac4f9d074402f02032b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myEnemy: {fileID: 11400000, guid: f1b2388407841d04e8cc955fed98b06e, type: 2}
-  DeathEffect: {fileID: 1151346968885830, guid: f3a3c88eceda5354f987cf577e7d7140,
-    type: 2}
-  maxDistanceDelta: 1
-  dir: {fileID: 4401864487543528}
-  hitSoundCutter: {fileID: 8300000, guid: 2ded81ef79f2fae42a968ae1c721d9eb, type: 3}
-  block: 1
-  isDoo: 0
-  dooTimer: 0
-  defaultDoo: {fileID: 0}
-  attackDoo: {fileID: 0}
-  hurtObj: {fileID: 0}
-  hurtSpawn: {fileID: 0}
-  invincible: 0
---- !u!212 &212802631876119672
+  rigid: {fileID: 50416476410864966}
+  effect: {fileID: 1936027507246976, guid: 0552ebe822d8ae04fb90aabef4e46e3e, type: 2}
+--- !u!212 &212832182331672848
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1912036535284444}
+  m_GameObject: {fileID: 1650252551864804}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -148,12 +126,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6827c0d68d35a384492ffd69b7df37b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d72e8dd866834134f9e8adab102799e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.3333334, y: 1.3333334}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
