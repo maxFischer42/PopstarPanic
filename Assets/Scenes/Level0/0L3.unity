@@ -4662,7 +4662,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4902472292135032, guid: 2125cd01a5acfa340a30372b61f84dff, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1912687833551982, guid: 2125cd01a5acfa340a30372b61f84dff, type: 2}
       propertyPath: m_Name
@@ -4708,7 +4708,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4902472292135032, guid: 2125cd01a5acfa340a30372b61f84dff, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1912687833551982, guid: 2125cd01a5acfa340a30372b61f84dff, type: 2}
       propertyPath: m_Name
@@ -4754,7 +4754,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4675256529599078, guid: 42956aa4426a814409e7b218daa0efe0, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42956aa4426a814409e7b218daa0efe0, type: 2}
@@ -5442,16 +5442,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4693616500203186, guid: 3c77f4abf61a2ef49bd1bc005b0804ce, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c77f4abf61a2ef49bd1bc005b0804ce, type: 2}
   m_IsPrefabAsset: 0
---- !u!4 &550358188 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4693616500203186, guid: 3c77f4abf61a2ef49bd1bc005b0804ce,
-    type: 2}
-  m_PrefabInternal: {fileID: 550358187}
 --- !u!1 &591132922
 GameObject:
   m_ObjectHideFlags: 0
@@ -24242,7 +24237,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4675256529599078, guid: 42956aa4426a814409e7b218daa0efe0, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1530265502159164, guid: 42956aa4426a814409e7b218daa0efe0, type: 2}
       propertyPath: m_Name
@@ -24542,7 +24537,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4010120680100874, guid: 9512fc0161d5c8f4a93224483a0024ea, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1426114999339942, guid: 9512fc0161d5c8f4a93224483a0024ea, type: 2}
       propertyPath: m_Name
@@ -25086,7 +25081,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4902472292135032, guid: 2125cd01a5acfa340a30372b61f84dff, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2125cd01a5acfa340a30372b61f84dff, type: 2}
@@ -25297,11 +25292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff520dc7e09680f45aa3745f6c9e225f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 550358188}
+  target: {fileID: 1539491170}
   offset: {x: 0, y: 0, z: -10}
   smoothSpeed: 0.125
-  maxHeight: -5
-  minHeight: -5
+  maxHeight: -2
+  minHeight: -2
 --- !u!114 &1390581846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25819,6 +25814,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1539491170 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4819890385184396, guid: 3c77f4abf61a2ef49bd1bc005b0804ce,
+    type: 2}
+  m_PrefabInternal: {fileID: 550358187}
 --- !u!1 &1544541374
 GameObject:
   m_ObjectHideFlags: 0
@@ -26314,7 +26314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4675256529599078, guid: 42956aa4426a814409e7b218daa0efe0, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1530265502159164, guid: 42956aa4426a814409e7b218daa0efe0, type: 2}
       propertyPath: m_Name
@@ -27480,7 +27480,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4902472292135032, guid: 2125cd01a5acfa340a30372b61f84dff, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1912687833551982, guid: 2125cd01a5acfa340a30372b61f84dff, type: 2}
       propertyPath: m_Name

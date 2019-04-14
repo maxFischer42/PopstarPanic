@@ -9808,7 +9808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fade: {fileID: 406940540}
   fading: 0
-  SceneToLoad: AxeTutorial
+  SceneToLoad: World2Opening
   particles: {fileID: 1149764622}
   spriteRender: {fileID: 219161624}
 --- !u!58 &1927471475
